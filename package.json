@@ -1,0 +1,15 @@
+{
+	"name": "aoc18",
+	"version": "1.0.0",
+	"description": "Solutions for Advent of Code 2018",
+	"main": "index.js",
+	"author": "Jon Ballands <jballands@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"aoc18": "node index.js"
+	},
+	"dependencies": {
+		"chalk": "^2.4.1",
+		"minimist": "^1.2.0"
+	}
+}
