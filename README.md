@@ -8,7 +8,7 @@ Advent of Code © 2018 Eric Wastl
 ## Usage
 
 ```
-yarn|npm aoc18 <dayNumber>  <partNumber> --input <inputFile> --help
+yarn|npm solve <dayNumber> <partNumber> --input <inputFile> --help
 ```
 
 `--day`: The day to run.  
@@ -24,7 +24,7 @@ solutions
 ├── day1
 │   ├── part1.js
 │   ├── part2.js
-│	└── input
+│   └── input
 ├── day2
 │   └── ...
 └── ...

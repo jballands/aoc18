@@ -6,10 +6,11 @@
 	"author": "Jon Ballands <jballands@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"aoc18": "node index.js"
+		"solve": "node index.js"
 	},
 	"dependencies": {
 		"chalk": "^2.4.1",
+		"immutable": "^4.0.0-rc.10",
 		"minimist": "^1.2.0"
 	}
 }
