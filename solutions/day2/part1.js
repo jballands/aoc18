@@ -1,3 +1,7 @@
+//
+//	What is the checksum for your list of box IDs?
+//
+
 const { Map } = require('immutable');
 
 module.exports = function(input) {

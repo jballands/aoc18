@@ -1,8 +1,6 @@
-/**
- *	x abcd
- *	x accd
- *	x bbcc
- */
+//
+//	What letters are common between the two correct box IDs?
+//
 
 function compare(_original, _comparison) {
 	const original = _original.split('');

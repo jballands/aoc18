@@ -17,22 +17,25 @@ const readFile = promisify(fs.readFile);
 
 function showHelp() {
 	console.info(
-		`usage: yarn aoc18 ${blue(`<dayNumber>`)}  ${blue(
-			`<partNumber>`
-		)} ${magenta([`--input`])} ${blue(`<inputFile>`)} ${magenta([
-			`--help`
-		])}`
+		`usage: yarn solve ${magenta([`--day`])} ${blue(
+			`<dayNumber>`
+		)} ${magenta([`--part`])} ${blue(`<partNumber>`)} ${magenta([
+			`--debug`
+		])} ${magenta([`--help`])}`
 	);
 	console.info(`${magenta(`--day`)}\tThe day to run.`);
 	console.info(`${magenta(`--part`)}\tThe part to run.`);
+	console.info(`${magenta(`--debug`)}\tUse input-debug instead of input.`);
 	console.info(`${magenta(`--help`)}\tShow usage information.`);
 }
 
-async function processSolution(day, part) {
+async function processSolution(day, part, debug = false) {
 	const path = `./solutions/day${day}`;
 
+	const inFile = debug ? 'input-debug' : 'input';
+
 	try {
-		const input = await readFile(`${path}/input`, 'utf-8');
+		const input = await readFile(`${path}/${inFile}`, 'utf-8');
 		const answer = require(`${path}/part${part}`)(input);
 
 		console.info(`part ${part} > ${answer}`);
@@ -41,7 +44,7 @@ async function processSolution(day, part) {
 	}
 }
 
-const { day, part, help } = minimist(process.argv.slice(2));
+const { day, part, debug, help } = minimist(process.argv.slice(2));
 
 if (!day || !part || help) {
 	showHelp();
@@ -49,4 +52,4 @@ if (!day || !part || help) {
 }
 
 // Try and read the input from the directory. Always read as a string
-processSolution(day, part).then(() => process.exit(0));
+processSolution(day, part, debug).then(() => process.exit(0));

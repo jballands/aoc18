@@ -1,3 +1,7 @@
+//
+//	What is the first frequency your device reaches twice?
+//
+
 module.exports = function(input) {
 	input = input.split('\n').map(val => parseInt(val));
 
