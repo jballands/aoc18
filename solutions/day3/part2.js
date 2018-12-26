@@ -2,7 +2,7 @@
 //	What is the ID of the only claim that doesn't overlap?
 //
 
-const { List, Map, Record } = require('immutable');
+const { List, Map } = require('immutable');
 
 function process(line) {
 	const regex = /#(\d+) @ (\d+),(\d+): (\d+)x(\d+)/;
@@ -31,7 +31,7 @@ function generatePoints(points, claim) {
 }
 
 // This has awful time complexity... but I don't know if I care? Give this
-// puppy like, a full minute to execute
+// puppy like, a full minute to execute. It's also riddled with side-effects...
 module.exports = function(input) {
 	const claims = input.split('\n').map(claim => process(claim));
 	let allIds = List(claims.map(claim => claim.id));
